@@ -33,9 +33,9 @@ def main() -> None:
     by_article = {hit.chunk.article_id: hit.chunk.citation for hit in state.get("hits", [])}
     print(f"[{state['outcome']}] {state['answer'].text}")
     if state.get("masked"):
-        print("Maskelenen kişisel veri:", ", ".join(state["masked"]))
+        print("Masked personal data:", ", ".join(state["masked"]))
     for article in state["answer"].citations:
-        print("  kaynak:", by_article.get(article, article))
+        print("  source:", by_article.get(article, article))
 
 
 if __name__ == "__main__":

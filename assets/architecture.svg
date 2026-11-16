@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" width="1000" height="330" role="img" aria-labelledby="t d">
+<title id="t">Pipeline: guard, hybrid retrieval, generation with validated citations</title><desc id="d">A question passes an input guard, then hybrid BM25 and dense retrieval, then a generator whose citations are checked against the retrieved articles. Prompt injection is refused and weak evidence leads to abstention.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#475569"/></marker><style>
+      text{font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;fill:#0f172a}
+      .h{font-size:15px;font-weight:700}
+      .s{font-size:12px;fill:#334155}
+      .k{font-size:11px;font-weight:700;fill:#64748b;letter-spacing:.08em}
+      .box{fill:#ffffff;stroke:#94a3b8;stroke-width:1.5}
+      .src{fill:#e0f2fe;stroke:#0284c7;stroke-width:1.5}
+      .out{fill:#dcfce7;stroke:#16a34a;stroke-width:1.5}
+      .warn{fill:#fef3c7;stroke:#d97706;stroke-width:1.5}
+      .ln{stroke:#475569;stroke-width:1.6;fill:none}
+      .v{font-size:13px;font-weight:700}
+    </style></defs>
+<rect width="1000" height="330" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+<text class="k" x="30" y="38">INPUT</text>
+<rect class="src" x="30" y="54" width="166" height="124" rx="8"/>
+<text class="h" x="44" y="82">Question</text>
+<text class="s" x="44" y="106">Turkish, free text</text>
+<text class="s" x="44" y="124">may contain personal data</text>
+<path class="ln" marker-end="url(#a)" d="M198 116.0H221"/>
+<text class="k" x="224" y="38">GUARD</text>
+<rect class="box" x="224" y="54" width="166" height="124" rx="8"/>
+<text class="h" x="238" y="82">Mask and screen</text>
+<text class="s" x="238" y="106">TCKN, IBAN, card (checksum)</text>
+<text class="s" x="238" y="124">phone, e-mail</text>
+<text class="s" x="238" y="142">prompt-injection patterns</text>
+<path class="ln" marker-end="url(#a)" d="M391 116.0H414"/>
+<text class="k" x="417" y="38">RETRIEVE</text>
+<rect class="box" x="417" y="54" width="166" height="124" rx="8"/>
+<text class="h" x="431" y="82">Hybrid search</text>
+<text class="s" x="431" y="106">BM25, Turkish prefix stemming</text>
+<text class="s" x="431" y="124">multilingual MiniLM (ONNX)</text>
+<text class="s" x="431" y="142">reciprocal rank fusion</text>
+<path class="ln" marker-end="url(#a)" d="M585 116.0H608"/>
+<text class="k" x="611" y="38">GENERATE</text>
+<rect class="box" x="611" y="54" width="166" height="124" rx="8"/>
+<text class="h" x="625" y="82">Answer</text>
+<text class="s" x="625" y="106">OpenAI-compatible endpoint</text>
+<text class="s" x="625" y="124">or offline extractive mode</text>
+<text class="s" x="625" y="142">citations validated</text>
+<path class="ln" marker-end="url(#a)" d="M778 116.0H801"/>
+<text class="k" x="804" y="38">OUTPUT</text>
+<rect class="out" x="804" y="54" width="166" height="124" rx="8"/>
+<text class="h" x="818" y="82">Answer + sources</text>
+<text class="s" x="818" y="106">law and article number</text>
+<text class="s" x="818" y="124">masked entities reported</text>
+<path class="ln" marker-end="url(#a)" d="M306 180V212"/>
+<rect class="warn" x="224" y="216" width="166" height="62" rx="8"/>
+<text class="h" x="238" y="241">Refuse</text>
+<text class="s" x="238" y="261">prompt injection detected</text>
+<path class="ln" marker-end="url(#a)" d="M500 180V212"/>
+<rect class="warn" x="417" y="216" width="166" height="62" rx="8"/>
+<text class="h" x="431" y="241">Abstain</text>
+<text class="s" x="431" y="261">best match below threshold</text>
+</svg>
