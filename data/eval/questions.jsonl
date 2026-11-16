@@ -1,0 +1,56 @@
+{"question": "Açık rıza kavramı kanunda nasıl tanımlanıyor?", "gold": ["6698:3"]}
+{"question": "Kişisel verilerin işlenmesinde uyulması gereken temel ilkeler nelerdir?", "gold": ["6698:4"]}
+{"question": "Kişisel veriler hangi durumlarda ilgili kişinin rızası alınmadan işlenebilir?", "gold": ["6698:5"]}
+{"question": "Sağlık bilgileri gibi hassas veriler hangi koşullarda işlenebilir?", "gold": ["6698:6"]}
+{"question": "İşlenme sebepleri ortadan kalkan veriler ne yapılmalıdır?", "gold": ["6698:7"]}
+{"question": "Kişisel veriler yurt içindeki üçüncü kişilere hangi şartlarla verilebilir?", "gold": ["6698:8"]}
+{"question": "Kişisel veriler yabancı bir ülkeye hangi şartlarla gönderilebilir?", "gold": ["6698:9"]}
+{"question": "Veri toplanırken ilgili kişiye hangi bilgiler verilmek zorundadır?", "gold": ["6698:10"]}
+{"question": "Bir kişi kendi verileriyle ilgili olarak veri sorumlusundan neler talep edebilir?", "gold": ["6698:11"]}
+{"question": "Veri sorumlusu verilerin güvenliği için hangi tedbirleri almak zorundadır?", "gold": ["6698:12"]}
+{"question": "Veri sorumlusu kendisine yapılan başvuruyu en geç kaç gün içinde sonuçlandırmalıdır?", "gold": ["6698:13"]}
+{"question": "Başvurusu reddedilen kişi Kurula ne kadar süre içinde şikâyette bulunabilir?", "gold": ["6698:14"]}
+{"question": "Veri sorumluları bir sicile kaydolmak zorunda mı?", "gold": ["6698:16"]}
+{"question": "Aydınlatma yükümlülüğünü yerine getirmeyenlere ne kadar idari para cezası verilir?", "gold": ["6698:18"]}
+{"question": "Kişisel Verileri Koruma Kurulu kaç üyeden oluşur?", "gold": ["6698:21"]}
+{"question": "Hangi durumlarda kişisel verilerin korunmasına ilişkin kanun hükümleri uygulanmaz?", "gold": ["6698:28"]}
+{"question": "Türkiye'de bir banka kurmak için hangi şartlar aranır?", "gold": ["5411:7"]}
+{"question": "Banka kurucularının taşıması gereken nitelikler nelerdir?", "gold": ["5411:8"]}
+{"question": "Bankalarda yönetim kurulu en az kaç kişiden oluşur?", "gold": ["5411:23"]}
+{"question": "Bankalardaki denetim komitesinin görevleri nelerdir?", "gold": ["5411:24"]}
+{"question": "Banka genel müdürü olmak için kaç yıl mesleki deneyim gerekir?", "gold": ["5411:25"]}
+{"question": "Bankalar iç kontrol sistemini nasıl kurmak zorundadır?", "gold": ["5411:30", "5411:29"]}
+{"question": "Bankaların risk yönetimi sisteminin amacı nedir?", "gold": ["5411:31", "5411:29"]}
+{"question": "Bankalar belgelerini kaç yıl saklamak zorundadır?", "gold": ["5411:42"]}
+{"question": "Bankaların sermaye yeterliliği oranı en az ne kadar olmalıdır?", "gold": ["5411:45"]}
+{"question": "Bankacılık mevzuatına göre hangi işlemler kredi sayılır?", "gold": ["5411:48"]}
+{"question": "Risk grubu ne demektir?", "gold": ["5411:49"]}
+{"question": "Bankalar kendi çalışanlarına ve ortaklarına kredi verebilir mi?", "gold": ["5411:50"]}
+{"question": "Bir banka tek bir müşteri grubuna özkaynaklarının en fazla yüzde kaçı kadar kredi verebilir?", "gold": ["5411:54"]}
+{"question": "Bankalar gayrimenkul ticareti yapabilir mi?", "gold": ["5411:57"]}
+{"question": "Bankalar bir yılda en fazla ne kadar bağış yapabilir?", "gold": ["5411:59"]}
+{"question": "Uzun süre aranmayan mevduat ne kadar zaman sonra zamanaşımına uğrar?", "gold": ["5411:62"]}
+{"question": "Mevduat sigortasının kapsamı nasıl belirlenir?", "gold": ["5411:63"]}
+{"question": "Bir bankanın faaliyet izni hangi durumlarda kaldırılır veya banka Fona devredilir?", "gold": ["5411:71"]}
+{"question": "Banka çalışanları müşteri sırlarını kimlere açıklayabilir?", "gold": ["5411:73"]}
+{"question": "Bir bankanın itibarını zedeleyecek asılsız haber yaymanın cezası nedir?", "gold": ["5411:158", "5411:74"]}
+{"question": "Müşteri sırrını açıklayan banka mensubuna hangi ceza verilir?", "gold": ["5411:159"]}
+{"question": "Banka parasını zimmetine geçiren çalışanın cezası nedir?", "gold": ["5411:160"]}
+{"question": "İzinsiz mevduat toplayanlara hangi ceza uygulanır?", "gold": ["5411:150"]}
+{"question": "Bankalar dışarıdan destek hizmeti alırken hangi kurallara tabidir?", "gold": ["5411:35"]}
+{"question": "Varlık yönetim şirketleri hangi esaslara göre kurulur?", "gold": ["5411:143"]}
+{"question": "Hangi faaliyetler ödeme hizmeti sayılır?", "gold": ["6493:12"]}
+{"question": "Kimler ödeme hizmeti sağlayıcısı olabilir?", "gold": ["6493:13"]}
+{"question": "Ödeme kuruluşu olarak faaliyet göstermek için hangi şartlar gerekir?", "gold": ["6493:14"]}
+{"question": "Ödeme kuruluşları müşterilerinden aldıkları fonları nasıl korumak zorundadır?", "gold": ["6493:22"]}
+{"question": "İzinsiz ödeme hizmeti sunanlara hangi ceza verilir?", "gold": ["6493:28"]}
+{"question": "Ödeme kuruluşları belgelerini kaç yıl saklamalıdır?", "gold": ["6493:23"]}
+{"question": "Ödeme sistemine girmiş bir transfer emri geri alınabilir mi?", "gold": ["6493:10"]}
+{"question": "Kira artış oranı en fazla ne kadar olabilir?", "gold": []}
+{"question": "İşçinin yıllık ücretli izin süresi kaç gündür?", "gold": []}
+{"question": "Trafik cezasına nasıl itiraz edilir?", "gold": []}
+{"question": "Python'da bir liste nasıl sıralanır?", "gold": []}
+{"question": "Bugün İstanbul'da hava nasıl olacak?", "gold": []}
+{"question": "Boşanma davası ortalama ne kadar sürer?", "gold": []}
+{"question": "Kurumlar vergisi oranı yüzde kaçtır?", "gold": []}
+{"question": "En iyi mercimek çorbası tarifi nedir?", "gold": []}
