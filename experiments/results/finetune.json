@@ -1,0 +1,95 @@
+{
+  "base_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+  "device": "mps",
+  "epochs": 3,
+  "batch": 32,
+  "lr": 2e-05,
+  "temperature": 0.05,
+  "train_pairs_per_epoch": 413,
+  "eval_questions": 48,
+  "before": {
+    "dense": {
+      "recall@1": 0.354,
+      "recall@3": 0.542,
+      "recall@5": 0.646,
+      "mrr@10": 0.483
+    },
+    "hybrid": {
+      "recall@1": 0.583,
+      "recall@3": 0.833,
+      "recall@5": 0.917,
+      "mrr@10": 0.734
+    }
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "train_minutes": 0.7,
+      "epoch_loss": [
+        2.5487,
+        2.4001,
+        1.9562
+      ],
+      "after": {
+        "dense": {
+          "recall@1": 0.542,
+          "recall@3": 0.792,
+          "recall@5": 0.854,
+          "mrr@10": 0.674
+        },
+        "hybrid": {
+          "recall@1": 0.729,
+          "recall@3": 0.875,
+          "recall@5": 0.917,
+          "mrr@10": 0.815
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "train_minutes": 0.7,
+      "epoch_loss": [
+        2.5203,
+        2.1216,
+        2.022
+      ],
+      "after": {
+        "dense": {
+          "recall@1": 0.625,
+          "recall@3": 0.833,
+          "recall@5": 0.854,
+          "mrr@10": 0.736
+        },
+        "hybrid": {
+          "recall@1": 0.667,
+          "recall@3": 0.896,
+          "recall@5": 0.938,
+          "mrr@10": 0.779
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "train_minutes": 0.6,
+      "epoch_loss": [
+        2.529,
+        2.0399,
+        1.981
+      ],
+      "after": {
+        "dense": {
+          "recall@1": 0.646,
+          "recall@3": 0.833,
+          "recall@5": 0.854,
+          "mrr@10": 0.737
+        },
+        "hybrid": {
+          "recall@1": 0.708,
+          "recall@3": 0.854,
+          "recall@5": 0.917,
+          "mrr@10": 0.797
+        }
+      }
+    }
+  ]
+}

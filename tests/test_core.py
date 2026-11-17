@@ -101,3 +101,19 @@ def test_graph_masks_pii_before_retrieval_and_answers():
     )
     assert state["outcome"] == "answered" and "10000000146" not in retriever.query
     assert state["answer"].citations == ("5411:42",)
+
+
+def test_epoch_pairs_one_per_chunk_and_query_cut_from_passage():
+    from mevzuat_rag.finetune_data import epoch_pairs
+
+    chunks = load_corpus()
+    pairs = epoch_pairs(chunks, seed=0)
+    ids = [p.chunk_id for p in pairs]
+    # A second pair from the same chunk would sit in the batch as a false negative.
+    assert len(ids) == len(set(ids)) and len(pairs) > 300
+    # The inverse-cloze sentence is removed from its passage, otherwise the task is string matching.
+    cloze = [p for p in pairs if len(p.query.split()) >= 6]
+    assert cloze and all(p.query not in p.passage for p in cloze)
+    # Generic headings shared by several laws are never used as queries.
+    assert "Amaç" not in {p.query for p in pairs}
+    assert epoch_pairs(chunks, seed=0) == pairs and epoch_pairs(chunks, seed=1) != pairs

@@ -1,0 +1,28 @@
+{
+  "model": "base",
+  "chunks": 521,
+  "eval_questions": 48,
+  "paths": {
+    "numpy_exact": {
+      "recall@1": 0.354,
+      "recall@3": 0.542,
+      "recall@5": 0.646,
+      "mrr@10": 0.483,
+      "median_query_ms": 14.3
+    },
+    "chromadb_hnsw": {
+      "recall@1": 0.354,
+      "recall@3": 0.542,
+      "recall@5": 0.646,
+      "mrr@10": 0.483,
+      "median_query_ms": 12.5
+    },
+    "llamaindex_chroma": {
+      "recall@1": 0.354,
+      "recall@3": 0.542,
+      "recall@5": 0.646,
+      "mrr@10": 0.483,
+      "median_query_ms": 12.7
+    }
+  }
+}

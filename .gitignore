@@ -3,3 +3,4 @@ __pycache__/
 data/index/
 .pytest_cache/
 *.egg-info/
+models/

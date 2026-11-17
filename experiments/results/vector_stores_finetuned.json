@@ -1,0 +1,28 @@
+{
+  "model": "finetuned",
+  "chunks": 521,
+  "eval_questions": 48,
+  "paths": {
+    "numpy_exact": {
+      "recall@1": 0.542,
+      "recall@3": 0.792,
+      "recall@5": 0.854,
+      "mrr@10": 0.674,
+      "median_query_ms": 6.6
+    },
+    "chromadb_hnsw": {
+      "recall@1": 0.542,
+      "recall@3": 0.792,
+      "recall@5": 0.854,
+      "mrr@10": 0.674,
+      "median_query_ms": 7.1
+    },
+    "llamaindex_chroma": {
+      "recall@1": 0.542,
+      "recall@3": 0.792,
+      "recall@5": 0.854,
+      "mrr@10": 0.674,
+      "median_query_ms": 9.9
+    }
+  }
+}

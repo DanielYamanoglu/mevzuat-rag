@@ -51,6 +51,29 @@ What the numbers say:
 - **Lexical search beats a small multilingual embedding model on legal Turkish** by a wide margin; fusion still adds 4 points of Recall@5 over BM25 alone.
 - **Similarity-based abstention catches clearly off-topic questions** (recipes, weather, programming) but not questions from neighbouring legal areas (rent, labour, tax law). Separating those needs a relevance grader, not a threshold.
 
+## Experiment: fine-tuning the encoder on the legislation
+
+The dense side is the weak half of the hybrid, so I fine-tuned it on the corpus itself, in plain PyTorch on Hugging Face Transformers ([`experiments/finetune_embedder.py`](experiments/finetune_embedder.py)). No labelled queries go into training: each pair is a sentence cut out of an article (inverse cloze task) or an article's heading when that heading is unique, against the rest of the article, with a symmetric in-batch contrastive loss. The 48 hand-written questions are only used for scoring, and the hyperparameters were fixed before the first run (3 epochs, batch 32, lr 2e-5, temperature 0.05; about 40 seconds on an M4 GPU).
+
+| Encoder | Dense Recall@1 | Dense Recall@5 | Dense MRR@10 | Hybrid Recall@5 | Hybrid MRR@10 |
+|---|---|---|---|---|---|
+| Base MiniLM | 0.354 | 0.646 | 0.483 | 0.917 | 0.734 |
+| Fine-tuned, 3 seeds | 0.542–0.646 | **0.854** (all seeds) | 0.674–0.737 | 0.917–0.938 | **0.779–0.815** |
+
+- Dense Recall@5 rises by 21 points on every seed; dense search alone now comes close to BM25 (0.875).
+- In the hybrid, Recall@5 barely moves, but the right article lands higher: MRR@10 improves on every seed.
+- The encoder saw the legislation text during training (never the questions), which is the realistic setting for a fixed corpus, but it means these numbers say nothing about unseen laws.
+
+The service still ships the base encoder through `fastembed`; switching to the fine-tuned one is a model-path change once the evaluation set is larger.
+
+**Same embeddings in a vector database and a framework** ([`experiments/vector_stores.py`](experiments/vector_stores.py)). The index served three ways, exact numpy search, ChromaDB (HNSW, cosine) and a LlamaIndex `VectorStoreIndex` on a Chroma collection, gives identical Recall@k and MRR for both encoders on this corpus, so either can replace the in-memory matrix without a quality cost. Results are in [`experiments/results/`](experiments/results/).
+
+```bash
+uv sync --group experiments
+uv run --group experiments python experiments/finetune_embedder.py
+uv run --group experiments python experiments/vector_stores.py --model finetuned
+```
+
 ## Quickstart
 
 Requires [uv](https://docs.astral.sh/uv/) and Python 3.12.
@@ -94,9 +117,11 @@ src/mevzuat_rag/guard.py      PII masking with checksums, injection patterns
 src/mevzuat_rag/llm.py        extractive and OpenAI-compatible generators, citation validation
 src/mevzuat_rag/graph.py      LangGraph pipeline with refuse/abstain exits
 src/mevzuat_rag/evaluate.py   Recall@k, MRR, abstention metrics
+src/mevzuat_rag/finetune_data.py  training pairs for encoder fine-tuning (no labelled queries)
+experiments/                  PyTorch fine-tuning, ChromaDB and LlamaIndex comparisons, results
 data/raw/                     the three laws as plain text
 data/eval/questions.jsonl     56 labelled questions
-tests/                        11 tests: parser, tokenizer, guard, citation validation, graph exits
+tests/                        12 tests: parser, tokenizer, guard, citation validation, graph exits
 ```
 
 ## Limitations
